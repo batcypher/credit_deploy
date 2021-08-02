@@ -73,12 +73,5 @@ with set_authentication(app, AUTH), set_token(app, TOKEN), set_api_name(
         # this is run only if development server is run
         # Set the name of the API
         socketio.run(app=app, debug=True, port=PORT)
-    else:
-        # Start the Hydrus app
-        http_server = WSGIServer(("", PORT), app)
-        logger.info(f"Running server at port {PORT}")
-        try:
-            http_server.serve_forever()
-        except KeyboardInterrupt:
-            pass
+
 
