@@ -32,8 +32,8 @@ DB_URL = (
 )
 HYDRUS_SERVER_URL = f"http://creditriskhydra.herokuapp.com/"
 
-cwd_path = Path(dirname(dirname(abspath(__file__))))
-API_DOC_PATH = cwd_path / "api_doc" / "ApiDoc.jsonld"
+# cwd_path = Path(dirname(dirname(abspath(__file__))))
+API_DOC_PATH = f"api_doc" + "/" + f"ApiDoc.jsonld"
 
 # loading serialized api_doc object
 doc_file = open(API_DOC_PATH, "r")
@@ -72,6 +72,6 @@ with set_authentication(app, AUTH), set_token(app, TOKEN), set_api_name(
     if __name__ == "__main__":
         # this is run only if development server is run
         # Set the name of the API
-        socketio.run(app=app, debug=True, port=PORT)
+        socketio.run(host='0.0.0.0', app=app, debug=True, port=PORT)
 
 
