@@ -32,8 +32,8 @@ DB_URL = (
 )
 HYDRUS_SERVER_URL = f"http://creditriskhydra.herokuapp.com/"
 
-# cwd_path = Path(dirname(dirname(abspath(__file__))))
-API_DOC_PATH = f"api_doc" + "/" + f"ApiDoc.jsonld"
+cwd_path = Path(dirname(dirname(abspath(__file__))))
+API_DOC_PATH = cwd_path / "api_doc" / "ApiDoc.jsonld"
 
 # loading serialized api_doc object
 doc_file = open(API_DOC_PATH, "r")
